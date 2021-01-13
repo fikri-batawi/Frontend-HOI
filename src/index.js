@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from './Pages/User'
+import Games from './Pages/Games'
+import UserGames from './Pages/UserGames'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Games />
   </React.StrictMode>,
   document.getElementById('root')
 );
