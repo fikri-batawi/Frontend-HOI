@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from './Pages/User'
-import Games from './Pages/Games'
-import UserGames from './Pages/UserGames'
+import {Provider} from 'react-redux'
+import {store} from './Config/Redux'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Games />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
