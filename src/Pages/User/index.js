@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Header,Sidebar,TitlePage,Footer } from '../../Components'
 import {connect} from 'react-redux'
 import { createUser, getUsers } from '../../Config/Redux/Action/user.action'
+import Swal from 'sweetalert2'
 var DataTable = require('react-data-components').DataTable;
 
 class User extends React.Component{
@@ -26,6 +27,11 @@ class User extends React.Component{
         this.props.createUser(this.state)
         .then(()=> {
             this.props.getUsers()
+            Swal.fire({
+                title: 'Success!',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
         })
     }
 

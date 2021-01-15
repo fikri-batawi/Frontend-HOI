@@ -2,6 +2,7 @@ import React from 'react'
 import { Header,Sidebar,TitlePage,Footer } from '../../Components'
 import {connect} from 'react-redux'
 import { createGame, getGames } from '../../Config/Redux/Action/game.action'
+import Swal from 'sweetalert2'
 var DataTable = require('react-data-components').DataTable;
 
 class Games extends React.Component {
@@ -28,6 +29,11 @@ class Games extends React.Component {
         this.props.createGame(this.state)
         .then(()=> {
             this.props.getGames()
+            Swal.fire({
+                title: 'Success!',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
         })
     }
 
