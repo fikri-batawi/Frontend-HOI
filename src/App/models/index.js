@@ -22,4 +22,15 @@ db.sequelize = sequelize;
 db.user = require("./user.model")(sequelize, Sequelize);
 db.game = require("./game.model")(sequelize, Sequelize);
 
+db.game.belongsToMany(db.user, {
+  through: "user_game",
+  as: "users",
+  foreignKey: "game_id",
+});
+db.user.belongsToMany(db.game, {
+  through: "user_game",
+  as: "games",
+  foreignKey: "user_id",
+});
+
 module.exports = db;

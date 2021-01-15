@@ -24,7 +24,6 @@ class Games extends React.Component {
     }
 
     handleSubmit = () => {
-        console.log(this.state)
         this.setState({game_name:'',desc:'',slug:''})
         this.props.createGame(this.state)
         .then(()=> {

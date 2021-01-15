@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
 
 require("./App/routes/user.routes")(app);
 require("./App/routes/game.routes")(app);
+require("./App/routes/user_game.routes")(app);
 
 
 // set port, listen for requests
